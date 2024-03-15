@@ -67,17 +67,17 @@
         <aspectj.version>1.9.7</aspectj.version>
 
         <!-- Maven plugins -->
-        <jetty-maven-plugin.version>9.4.43.v20210629</jetty-maven-plugin.version>
-        <maven-assembly-plugin.version>3.3.0</maven-assembly-plugin.version>
-        <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
-        <maven-eclipse-plugin.version>2.10</maven-eclipse-plugin.version>
-        <maven-resources-plugin.version>3.1.0</maven-resources-plugin.version>
-        <maven-surefire-plugin.version>2.22.1</maven-surefire-plugin.version>
-        <maven-war-plugin.version>3.3.1</maven-war-plugin.version>
-        <jacoco-maven-plugin>0.8.6</jacoco-maven-plugin>
+        <jetty--plugin.version>9.4.43.v20210629</jetty--plugin.version>
+        <-assembly-plugin.version>3.3.0</-assembly-plugin.version>
+        <-compiler-plugin.version>3.8.1</-compiler-plugin.version>
+        <-eclipse-plugin.version>2.10</-eclipse-plugin.version>
+        <-resources-plugin.version>3.1.0</-resources-plugin.version>
+        <-surefire-plugin.version>2.22.1</-surefire-plugin.version>
+        <-war-plugin.version>3.3.1</-war-plugin.version>
+        <jacoco--plugin>0.8.6</jacoco--plugin>
 
         <!-- Docker image -->
-        <docker.jib-maven-plugin.version>2.6.0</docker.jib-maven-plugin.version>
+        <docker.jib--plugin.version>2.6.0</docker.jib--plugin.version>
         <docker.image.prefix>springcommunity</docker.image.prefix>
 
     </properties>
@@ -99,6 +99,20 @@
                 <type>pom</type>
             </dependency>
         </dependencies>
+
+<distributionManagement>
+  <repository>
+    <id>maven-releases</id>
+    <!-- CHANGE HERE by your team Nexus server -->
+    <url>http://172.16.1.23:8081/repository/maven-releases/</url>
+  </repository>
+  <snapshotRepository>
+    <id>maven-snapshots</id>
+    <!-- CHANGE HERE by your team Nexus server -->
+    <url>http://172.16.1.23:8081/repository/maven-releases/</url>
+  </snapshotRepository>
+</distributionManagement>
+             
     </dependencyManagement>
 
     <dependencies>
@@ -312,15 +326,15 @@
         </testResources>
         <plugins>
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>${maven-compiler-plugin.version}</version>
+                <groupId>org.apache..plugins</groupId>
+                <artifactId>-compiler-plugin</artifactId>
+                <version>${-compiler-plugin.version}</version>
             </plugin>
 
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>${maven-surefire-plugin.version}</version>
+                <groupId>org.apache..plugins</groupId>
+                <artifactId>-surefire-plugin</artifactId>
+                <version>${-surefire-plugin.version}</version>
                 <configuration>
                     <includes>
                         <include>**/*Tests.java</include>
@@ -329,18 +343,18 @@
             </plugin>
 
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-war-plugin</artifactId>
-                <version>${maven-war-plugin.version}</version>
+                <groupId>org.apache..plugins</groupId>
+                <artifactId>-war-plugin</artifactId>
+                <version>${-war-plugin.version}</version>
                 <configuration>
                     <failOnMissingWebXml>false</failOnMissingWebXml>
                 </configuration>
             </plugin>
 
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-eclipse-plugin</artifactId>
-                <version>${maven-eclipse-plugin.version}</version>
+                <groupId>org.apache..plugins</groupId>
+                <artifactId>-eclipse-plugin</artifactId>
+                <version>${-eclipse-plugin.version}</version>
                 <configuration>
                     <downloadSources>true</downloadSources>
                     <downloadJavadocs>true</downloadJavadocs>
@@ -353,21 +367,21 @@
                             <name>org.springframework.ide.eclipse.core.springbuilder</name>
                         </buildCommand>
                         <buildCommand>
-                            <name>org.eclipse.m2e.core.maven2Builder</name>
+                            <name>org.eclipse.m2e.core.2Builder</name>
                         </buildCommand>
                     </additionalBuildcommands>
                     <additionalProjectnatures>
                         <projectnature>org.eclipse.jdt.core.javanature</projectnature>
                         <projectnature>org.springframework.ide.eclipse.core.springnature</projectnature>
-                        <projectnature>org.eclipse.m2e.core.maven2Nature</projectnature>
+                        <projectnature>org.eclipse.m2e.core.2Nature</projectnature>
                     </additionalProjectnatures>
                 </configuration>
             </plugin>
 
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-assembly-plugin</artifactId>
-                <version>${maven-assembly-plugin.version}</version>
+                <groupId>org.apache..plugins</groupId>
+                <artifactId>-assembly-plugin</artifactId>
+                <version>${-assembly-plugin.version}</version>
                 <configuration>
                     <descriptorRefs>
                         <descriptorRef>jar-with-dependencies</descriptorRef>
@@ -377,8 +391,8 @@
 
             <plugin>
                 <groupId>org.jacoco</groupId>
-                <artifactId>jacoco-maven-plugin</artifactId>
-                <version>${jacoco-maven-plugin}</version>
+                <artifactId>jacoco--plugin</artifactId>
+                <version>${jacoco--plugin}</version>
                 <executions>
                     <execution>
                         <goals>
@@ -397,9 +411,9 @@
 
             <!--Specify the encoding for copying resources-->
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-resources-plugin</artifactId>
-                <version>${maven-resources-plugin.version}</version>
+                <groupId>org.apache..plugins</groupId>
+                <artifactId>-resources-plugin</artifactId>
+                <version>${-resources-plugin.version}</version>
                 <configuration>
                     <encoding>UTF-8</encoding>
                 </configuration>
@@ -407,7 +421,7 @@
 
             <plugin>
                 <groupId>ro.isdc.wro4j</groupId>
-                <artifactId>wro4j-maven-plugin</artifactId>
+                <artifactId>wro4j--plugin</artifactId>
                 <version>${wro4j.version}</version>
                 <executions>
                     <execution>
@@ -418,7 +432,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <wroManagerFactory>ro.isdc.wro.maven.plugin.manager.factory.ConfigurableWroManagerFactory</wroManagerFactory>
+                    <wroManagerFactory>ro.isdc.wro..plugin.manager.factory.ConfigurableWroManagerFactory</wroManagerFactory>
                     <cssDestinationFolder>${project.build.directory}/petclinic/resources/css</cssDestinationFolder>
                     <wroFile>${basedir}/src/main/wro/wro.xml</wroFile>
                     <extraConfigFile>${basedir}/src/main/wro/wro.properties</extraConfigFile>
@@ -441,14 +455,14 @@
 
             <plugin>
                 <groupId>org.eclipse.jetty</groupId>
-                <artifactId>jetty-maven-plugin</artifactId>
-                <version>${jetty-maven-plugin.version}</version>
+                <artifactId>jetty--plugin</artifactId>
+                <version>${jetty--plugin.version}</version>
             </plugin>
 
             <plugin>
                 <groupId>com.google.cloud.tools</groupId>
-                <artifactId>jib-maven-plugin</artifactId>
-                <version>${docker.jib-maven-plugin.version}</version>
+                <artifactId>jib--plugin</artifactId>
+                <version>${docker.jib--plugin.version}</version>
                 <configuration>
                     <to>
                         <image>docker.io/${docker.image.prefix}/${project.artifactId}</image>

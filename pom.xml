@@ -82,6 +82,20 @@
 
     </properties>
 
+<distributionManagement>
+  <repository>
+    <id>maven-releases</id>
+    <!-- CHANGE HERE by your team Nexus server -->
+    <url>http://172.16.1.23:8081/repository/maven-releases/</url>
+  </repository>
+  <snapshotRepository>
+    <id>maven-snapshots</id>
+    <!-- CHANGE HERE by your team Nexus server -->
+    <url>http://172.16.1.23:8081/repository/maven-snapshots/</url>
+  </snapshotRepository>
+</distributionManagement>
+         
+
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -99,19 +113,6 @@
                 <type>pom</type>
             </dependency>
         </dependencies>
-
-<distributionManagement>
-  <repository>
-    <id>maven-releases</id>
-    <!-- CHANGE HERE by your team Nexus server -->
-    <url>http://172.16.1.23:8081/repository/maven-releases/</url>
-  </repository>
-  <snapshotRepository>
-    <id>maven-snapshots</id>
-    <!-- CHANGE HERE by your team Nexus server -->
-    <url>http://172.16.1.23:8081/repository/maven-snapshots/</url>
-  </snapshotRepository>
-</distributionManagement>
              
     </dependencyManagement>
 
@@ -566,12 +567,12 @@
             <url>https://repo.spring.io/milestone</url>
         </repository>
 
-<repository>
-  <id>maven-releases</id>
-  <name>maven-releases</name>
-  <url>http://172.16.1.23:8081/repository/maven-releases/</url>
-</repository>
-             
+         <repository>
+           <id>maven-releases</id>
+           <name>maven-releases</name>
+           <url>http://172.16.1.23:8081/repository/maven-releases/</url>
+         </repository>
+                      
     </repositories>
 
 </project>

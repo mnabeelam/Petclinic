@@ -13,4 +13,4 @@ EXPOSE 8082
 
 # The default command to run when starting the container will start Tomcat
 CMD ["catalina.sh", "run"
-ENTRYPOINT ["java","-jar","/petclinic.war"]
+#ENTRYPOINT ["java","-jar","/petclinic.war"]

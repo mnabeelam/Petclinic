@@ -109,7 +109,7 @@
   <snapshotRepository>
     <id>maven-snapshots</id>
     <!-- CHANGE HERE by your team Nexus server -->
-    <url>http://172.16.1.23:8081/repository/maven-releases/</url>
+    <url>http://172.16.1.23:8081/repository/maven-snapshots/</url>
   </snapshotRepository>
 </distributionManagement>
              

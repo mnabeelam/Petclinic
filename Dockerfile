@@ -12,5 +12,5 @@ COPY target/petclinic.war /usr/local/tomcat/webapps/petclinic.war
 EXPOSE 8090
 
 # The default command to run when starting the container will start Tomcat
-CMD ["catalina.sh", "run"
+CMD ["catalina.sh", "run"]
 #ENTRYPOINT ["java","-jar","/petclinic.war"]

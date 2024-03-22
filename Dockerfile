@@ -3,9 +3,6 @@
 #ADD target/petclinic.war petclinic.war
 #ENTRYPOINT ["java","-jar","/petclinic.war"]
 
-
-
-
 # Use Tomcat version 9.0.65
 FROM tomcat:9.0.65-jdk11-openjdk
 
